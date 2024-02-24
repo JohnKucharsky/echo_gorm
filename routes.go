@@ -13,7 +13,7 @@ func routes(route *echo.Group, dbConnectionString string) {
 	route.GET("/healthz", handler.CheckHealth)
 
 	// users
-	route.POST("/users", h.UserPost)
+	route.POST("/users", h.CreateUser)
 	route.GET("/users", h.GetUsers)
 	route.GET("/users/:id", h.GetOneUser)
 	route.PUT("/users/:id", h.UpdateUser)
@@ -21,7 +21,7 @@ func routes(route *echo.Group, dbConnectionString string) {
 	// end users
 
 	// products
-	route.POST("/products", h.ProductPost)
+	route.POST("/products", h.CreateProduct)
 	route.GET("/products", h.GetProducts)
 	route.GET("/products/:id", h.GetOneProduct)
 	route.PUT("/products/:id", h.UpdateProduct)
@@ -29,7 +29,7 @@ func routes(route *echo.Group, dbConnectionString string) {
 	// end products
 
 	// orders
-	route.POST("/orders", h.OrderPost)
+	route.POST("/orders", h.CreateOrder)
 	route.GET("/orders", h.GetOrders)
 	route.PUT("/orders/:id", h.UpdateOrder)
 	route.DELETE("/orders/:id", h.DeleteOrder)
